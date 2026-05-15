@@ -1,25 +1,49 @@
 <div id="game-container">
-<div class="flex flex-col items-center justify-center min-h-full p-6 bg-gray-50">
-    <div class="text-center max-w-sm">
-        <h1 class="text-4xl font-bold text-gray-900 mb-2">Soc Ops</h1>
-        <p class="text-lg text-gray-600 mb-8">Social Bingo</p>
+<div class="flex flex-col items-center justify-center min-h-full p-6 relative overflow-hidden">
+    <!-- Animated background elements -->
+    <div class="absolute inset-0 opacity-20">
+        <div class="absolute top-10 left-10 w-32 h-32 border border-amber-500 rounded-full animate-[spin_20s_linear_infinite]"></div>
+        <div class="absolute bottom-20 right-20 w-40 h-40 border-2 border-amber-500 rounded-full animate-[spin_30s_linear_infinite_reverse]"></div>
+    </div>
 
-        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 mb-8">
-            <h2 class="font-semibold text-gray-800 mb-3">How to play</h2>
-            <ul class="text-left text-gray-600 text-sm space-y-2">
-                <li>• Find people who match the questions</li>
-                <li>• Tap a square when you find a match</li>
-                <li>• Get 5 in a row to win!</li>
+    <div class="text-center max-w-sm relative z-10">
+        <!-- Title with dramatic styling -->
+        <div class="mb-2">
+            <h1 class="text-5xl font-bold text-amber-500 mb-1 animate-slide-in" 
+                style="text-shadow: 0 0 20px rgba(255, 68, 68, 0.7), 0 4px 20px rgba(0,0,0,0.8);">
+                鬼 DEMON 鬼
+            </h1>
+            <p class="text-sm tracking-widest text-amber-500 opacity-80 uppercase mb-8">Slayer's Trial</p>
+        </div>
+
+        <!-- Rules card with demon aesthetic -->
+        <div class="bg-gray-50 rounded-lg p-6 shadow-xl border border-amber-400 mb-8 backdrop-blur-sm animate-fade-in">
+            <h2 class="font-bold text-amber-900 mb-4 text-lg">⚔ Trial Rules</h2>
+            <ul class="text-left text-gray-700 text-sm space-y-3">
+                <li class="flex items-start">
+                    <span class="text-amber-500 mr-3 font-bold">•</span>
+                    <span>Find demon slayers who match the mission</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-amber-500 mr-3 font-bold">•</span>
+                    <span>Tap a square when you find a worthy match</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-amber-500 mr-3 font-bold">•</span>
+                    <span>Achieve 5 in a line to defeat the demon</span>
+                </li>
             </ul>
         </div>
 
+        <!-- Start button -->
         <button
             hx-post="/start"
             hx-target="#game-container"
             hx-swap="outerHTML"
-            class="w-full bg-accent text-white font-semibold py-4 px-8 rounded-lg text-lg active:bg-accent-light transition-colors">
-            Start Game
+            class="w-full bg-accent text-white font-bold py-4 px-8 rounded-lg text-lg hover:shadow-xl active:bg-accent-light transition-all uppercase tracking-wider">
+            Enter the Battlefield
         </button>
+        <p class="text-xs text-amber-500 mt-6 opacity-70">Breathe... focus your energy...</p>
     </div>
 </div>
 </div>

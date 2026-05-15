@@ -1,33 +1,37 @@
 <div id="game-container">
-<div class="flex flex-col min-h-full bg-gray-50">
-    <!-- Header -->
-    <header class="flex items-center justify-between p-3 bg-white border-b border-gray-200">
+<div class="flex flex-col min-h-full relative">
+    <!-- Header with demon aesthetic -->
+    <header class="flex items-center justify-between p-4 bg-gradient-to-r from-demon-deep-red to-demon-crimson border-b-2 border-amber-400 shadow-xl relative z-10">
         <button
             hx-post="/reset"
             hx-target="#game-container"
             hx-swap="outerHTML"
-            class="text-gray-500 text-sm px-3 py-1.5 rounded active:bg-gray-100">
-            ← Back
+            class="text-amber-500 hover:text-amber-300 text-sm px-3 py-1.5 rounded font-semibold uppercase tracking-wider hover:shadow-lg active:bg-gray-100">
+            ← Retreat
         </button>
-        <h1 class="font-bold text-gray-900">Soc Ops</h1>
+        <h1 class="font-bold text-amber-500 text-lg tracking-widest" style="text-shadow: 0 0 10px rgba(255, 68, 68, 0.6);">
+            ⚔ DEMON SLAYER ⚔
+        </h1>
         <div class="w-16"></div>
     </header>
 
-    <!-- Instructions -->
-    <p class="text-center text-gray-500 text-sm py-2 px-4">
-        Tap a square when you find someone who matches it.
+    <!-- Mission briefing -->
+    <p class="text-center text-amber-500 text-sm py-3 px-4 font-semibold uppercase tracking-wider">
+        ✦ Find a slayer who matches this mission ✦
     </p>
 
-    <!-- Bingo indicator -->
+    <!-- Victory indicator -->
     {% if session.has_bingo %}
-    <div class="bg-amber-100 text-amber-800 text-center py-2 font-semibold text-sm">
-        🎉 BINGO! You got a line!
+    <div class="bg-gradient-to-r from-amber-900 to-amber-800 text-amber-200 text-center py-3 font-bold text-base border-b-2 border-amber-400 shadow-lg animate-pulse" style="text-shadow: 0 0 10px rgba(212, 165, 116, 0.6);">
+        ⚡ DEMON DEFEATED! ⚡
     </div>
     {% endif %}
 
-    <!-- Board -->
-    <div class="flex-1 flex items-center justify-center p-3">
-        {% include "components/bingo_board.html" %}
+    <!-- Board container with mystical styling -->
+    <div class="flex-1 flex items-center justify-center p-4 relative">
+        <div class="animate-slide-in">
+            {% include "components/bingo_board.html" %}
+        </div>
     </div>
 </div>
 

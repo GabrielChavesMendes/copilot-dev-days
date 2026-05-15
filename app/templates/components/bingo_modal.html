@@ -1,15 +1,16 @@
-<div class="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-    <div class="bg-white rounded-xl p-6 max-w-xs w-full text-center shadow-xl animate-[bounce_0.5s_ease-out]">
-        <div class="text-5xl mb-4">🎉</div>
-        <h2 class="text-3xl font-bold text-amber-500 mb-2">BINGO!</h2>
-        <p class="text-gray-600 mb-6">You completed a line!</p>
+<div class="fixed inset-0 bg-black/70 flex items-center justify-center p-4 z-50 backdrop-blur-sm">
+    <div class="bg-gradient-to-br from-demon-deep-red via-demon-crimson to-demon-purple rounded-xl p-8 max-w-xs w-full text-center shadow-xl animate-slide-in border-2 border-amber-400">
+        <div class="text-6xl mb-4 animate-bounce" style="animation: bounce 0.5s ease-out;">⚡</div>
+        <h2 class="text-4xl font-bold text-amber-300 mb-2" style="text-shadow: 0 0 10px rgba(255, 68, 68, 0.8);">DEMON</h2>
+        <h2 class="text-4xl font-bold text-amber-400 mb-4" style="text-shadow: 0 0 10px rgba(212, 165, 116, 0.8);">DEFEATED!</h2>
+        <p class="text-amber-100 mb-6 font-semibold">You have completed the trial!</p>
 
         <button
             hx-post="/dismiss-modal"
             hx-target="#game-container"
             hx-swap="outerHTML"
-            class="w-full bg-accent text-white font-semibold py-3 px-6 rounded-lg active:bg-accent-light transition-colors">
-            Keep Playing
+            class="w-full bg-accent text-white font-bold py-3 px-6 rounded-lg hover:shadow-lg active:bg-accent-light transition-all uppercase tracking-wider">
+            Continue Mission
         </button>
     </div>
 </div>
