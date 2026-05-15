@@ -4,16 +4,15 @@ description: Get my development workspace ready
 tools: ['execute/runTask', 'execute/runInTerminal', 'read', 'search', 'todo']
 ---
 
-Your goal is to successfully build and run the workspace as local development environment.
+Your goal is to prepare and verify the workspace for local development.
 
-## Checklist
-- [ ] Required dependencies (Python 3.13+, uv) installed and verified
-- [ ] Dependencies synced (`uv sync`)
-- [ ] Tests passing (`uv run pytest`)
-- [ ] Dev server running (`uv run uvicorn app.main:app --reload --host 0.0.0.0 --port 8000`)
-- [ ] Site opened in external browser (use `$BROWSER` or instruct the user to open http://localhost:8000)
-- [ ] Short engaging welcome tour for the workspace
+## Mandatory development checklist
+- [ ] lint with `uv run ruff check .`
+- [ ] build/sync dependencies with `uv sync`
+- [ ] run tests with `uv run pytest`
+- [ ] start dev server with `uv run uvicorn app.main:app --reload --host 0.0.0.0 --port 8000`
+- [ ] open the site in a real browser: `$BROWSER http://localhost:8000`
 
 ## Important
-- Do NOT use VS Code Simple Browser to preview the site. HTMX requires a full browser to function correctly.
-- Use `"$BROWSER" http://localhost:8000` in the terminal to open the site in the user's default browser.
+- Do NOT use VS Code Simple Browser to preview the app; HTMX needs a full browser.
+- Use `$BROWSER http://localhost:8000` from the terminal to open the site.
